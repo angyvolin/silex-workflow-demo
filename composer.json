@@ -1,0 +1,39 @@
+{
+    "name": "angyvolin/silex-workflow-demo",
+    "description": "Demo app for the new symfony/workflow component ported to Silex.",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.6",
+        "silex/silex": "~2.0",
+        "silex/web-profiler": "~2.0",
+        "symfony/asset": "~3.1",
+        "symfony/browser-kit": "~3.1",
+        "symfony/class-loader": "~3.1",
+        "symfony/config": "~3.1",
+        "symfony/console": "~3.1",
+        "symfony/css-selector": "~3.1",
+        "symfony/debug": "~3.1",
+        "symfony/finder": "~3.1",
+        "symfony/form": "~3.1",
+        "symfony/monolog-bridge": "~3.1",
+        "symfony/process": "~3.1",
+        "symfony/security": "~3.1",
+        "symfony/translation": "~3.1",
+        "symfony/twig-bridge": "~3.1",
+        "symfony/validator": "~3.1",
+        "symfony/debug-bundle": "^3.1",
+        "doctrine/orm": "^2.5",
+        "dflydev/doctrine-orm-service-provider": "^2.0",
+        "angyvolin/silex-workflow": "^0.1",
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "scripts": {
+        "run": [
+            "echo 'Started web server on http://localhost:8888'",
+            "php -S localhost:8888 -t web"
+        ]
+    }
+}
