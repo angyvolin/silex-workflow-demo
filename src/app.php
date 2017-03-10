@@ -23,8 +23,8 @@ $app->register(new DoctrineServiceProvider(), array(
         'host' => 'localhost',
         'user' => 'angy_v',
         'password' => '',
-        'charset' => 'utf8'
-    )
+        'charset' => 'utf8',
+    ),
 ));
 $app->register(new DoctrineOrmServiceProvider(), array(
     'orm.proxies_dir' => 'var/cache/proxies',
@@ -66,7 +66,7 @@ $app->register(new SecurityServiceProvider(), array(
     ),
     'security.default_encoder' => function () {
         return new PlaintextPasswordEncoder();
-    }
+    },
 ));
 $app->register(new SessionServiceProvider());
 $app->register(new TwigServiceProvider());
