@@ -4,23 +4,21 @@ silex-workflow-demo
 Installation
 ------------
 
-1. Change db.user parameter in 'db.options' section src/app.php to your actual db user, eg:
+1. Change db.user parameter in 'db.options' section src/app.php to your actual db user:
 
+    ```
+    'db.options' => array(
+        'user' => 'your_db_user',
+        // ...
+    )
+    ```
 
-```
-'db.options' => array(
-    'user' => 'your_db_user',
-    // ...
-)
-```
+2. Execute:
 
-2. :
-
-```
-composer install
-bin/console orm:schema-tool:create
-bin/console orm:schema-tool:update --force
-```
+    ```
+    composer install
+    bin/console orm:schema-tool:create
+    ```
 
 Run
 ---

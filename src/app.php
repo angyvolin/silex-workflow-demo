@@ -19,10 +19,8 @@ $app->register(new AssetServiceProvider());
 $app->register(new DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver' => 'pdo_pgsql',
-        'dbname' => 'symfony_demo_workflow',
         'host' => 'localhost',
         'user' => 'angy_v',
-        'password' => '',
         'charset' => 'utf8',
     ),
 ));
