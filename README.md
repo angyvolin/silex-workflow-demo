@@ -1,6 +1,8 @@
 silex-workflow-demo
 ===================
 
+![workflow](https://github.com/angyvolin/silex-workflow-demo/blob/master/web/img/workflow.png)
+
 Installation
 ------------
 
