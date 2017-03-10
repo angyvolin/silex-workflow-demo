@@ -25,7 +25,7 @@
         "symfony/debug-bundle": "^3.1",
         "doctrine/orm": "^2.5",
         "dflydev/doctrine-orm-service-provider": "^2.0",
-        "angyvolin/silex-workflow": "^0.1",
+        "angyvolin/silex-workflow": "^0.1"
     },
     "autoload": {
         "psr-0": { "": "src/" }

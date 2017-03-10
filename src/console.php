@@ -1,10 +1,10 @@
 <?php
 
 use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Workflow\Dumper\GraphvizDumper;
 
@@ -18,13 +18,14 @@ $console
     ))
     ->setDescription('Build the SVG')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
+        $app->boot();
         $name = $input->getArgument('service_name');
 
-        $definition = $this->getContainer()->get($name)->getDefinition();
+        $definition = $app[$name]->getDefinition();
 
         $dumper = new GraphvizDumper();
 
-        $dot = $dumper->dump($definition, null, ['node' => ['width' => 1.6]]);
+        $dot = $dumper->dump($definition, null, array('node' => array('width' => 1.6)));
 
         $process = new Process('dot -Tsvg');
         $process->setInput($dot);
@@ -35,7 +36,7 @@ $console
 
         $shortName = explode('.', $name)[1];
 
-        file_put_contents(sprintf('%s/Resources/views/%s/doc.svg.twig', $this->getContainer()->getParameter('kernel.root_dir'), $shortName), $svg);
+        file_put_contents(sprintf('%s/templates/%s/doc.svg.twig', dirname(__DIR__), $shortName), $svg);
     })
 ;
 

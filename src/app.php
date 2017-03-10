@@ -1,6 +1,7 @@
 <?php
 
 use Angyvolin\Provider\WorkflowServiceProvider;
+use Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Silex\Application;
 use Silex\Provider\AssetServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
@@ -11,7 +12,6 @@ use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Symfony\Component\Security\Core\Encoder\PlaintextPasswordEncoder;
 use Symfony\Component\Security\Core\User\InMemoryUserProvider;
-use Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 
 $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
