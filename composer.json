@@ -28,7 +28,7 @@
         "angyvolin/silex-workflow": "^0.1"
     },
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-4": { "Angyvolin\\": "src/" }
     },
     "scripts": {
         "run": [
