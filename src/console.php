@@ -8,7 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Workflow\Dumper\GraphvizDumper;
 
-$console = new Application('silex-workflow-demo app', '0.0.1');
+$console = new Application('silex-workflow-demo app', '1.0.0');
 $console->getDefinition()->addOption(new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev'));
 $console->setDispatcher($app['dispatcher']);
 $console
