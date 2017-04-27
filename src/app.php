@@ -16,12 +16,17 @@ use Symfony\Component\Security\Core\User\InMemoryUserProvider;
 $app = new Application();
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new AssetServiceProvider());
+
+$dbopts = parse_url(getenv('DATABASE_URL'));
 $app->register(new DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver' => 'pdo_pgsql',
-        'host' => 'localhost',
-        'user' => 'angy_v',
+        'host' => $dbopts['host'],
+        'port' => $dbopts['port'],
+        'user' => $dbopts['user'],
+        'password' => $dbopts['pass'],
         'charset' => 'utf8',
+        'dbname' => ltrim($dbopts["path"],'/'),
     ),
 ));
 $app->register(new DoctrineOrmServiceProvider(), array(
@@ -68,7 +73,9 @@ $app->register(new SecurityServiceProvider(), array(
 ));
 $app->register(new SessionServiceProvider());
 $app->register(new TwigServiceProvider());
-$app->register(new WorkflowServiceProvider());
+$app->register(new WorkflowServiceProvider(), [
+    'workflow.config' => require __DIR__.'/../config/workflow.php',
+]);
 $app->register(new Provider\WorkflowServiceProvider());
 
 return $app;
