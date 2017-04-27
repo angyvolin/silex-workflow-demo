@@ -2,7 +2,7 @@
 
 This demo application is based on [lyrixx/SFLive-Paris2016-Workflow](https://github.com/lyrixx/SFLive-Paris2016-Workflow)
 
-![workflow](https://github.com/angyvolin/silex-workflow-demo/blob/master/web/img/workflow.png)
+[![silex-workflow-demo](https://github.com/angyvolin/silex-workflow-demo/blob/master/web/img/workflow.png)](http://silex-rowkflow-demo.herokuapp.com/)
 
 Installation
 ------------
